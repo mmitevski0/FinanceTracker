@@ -2,11 +2,12 @@ from fastapi import FastAPI, Depends, HTTPException, status
 from sqlmodel import Field, Session, SQLModel, create_engine, select
 from typing import Optional, List
 from datetime import datetime
+from pydantic import constr
 import os
 
 DATABASE_URL = os.environ.get(
     "DATABASE_URL",
-    "postgresql://postgres:@localhost:5432/finance_tracker_db"
+    "postgresql://wp:wp@localhost:5432/finance_tracker_db"
 )
 
 engine = create_engine(DATABASE_URL, echo=True)
@@ -37,7 +38,7 @@ class Category(CategoryBase, table=True):
 
 class TransactionBase(SQLModel):
     amount: float
-    type: str = Field(pattern="^(income|expense)$")
+    type: constr(pattern="^(income|expense)$")
     description: Optional[str] = None
     transaction_date: datetime = Field(default_factory=datetime.utcnow)
 
