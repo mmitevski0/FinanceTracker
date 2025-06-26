@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cbc7f62-f3bb-4dbd-85aa-ab07f889a5cb" name="Changes" comment="CI/CD pipeline">
+    <list default="true" id="7cbc7f62-f3bb-4dbd-85aa-ab07f889a5cb" name="Changes" comment="Pushing requirements.txt remotely">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +100,7 @@
       <workItem from="1750355835370" duration="2513000" />
       <workItem from="1750424580298" duration="5279000" />
       <workItem from="1750867653870" duration="5895000" />
-      <workItem from="1750938234770" duration="2891000" />
+      <workItem from="1750938234770" duration="4202000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -149,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750939705656</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Pushing requirements.txt remotely">
+      <option name="closed" value="true" />
+      <created>1750941781813</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1750941781813</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +182,8 @@
     <MESSAGE value="Dockerfile for Frontend and Backend" />
     <MESSAGE value="Docker Compose" />
     <MESSAGE value="CI/CD pipeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="CI/CD pipeline" />
+    <MESSAGE value="Pushing requirements.txt remotely" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pushing requirements.txt remotely" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FinanceTracker$FinanceTracker.coverage" NAME="FinanceTracker Coverage Results" MODIFIED="1750280062616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
