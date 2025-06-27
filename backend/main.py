@@ -82,9 +82,9 @@ def on_startup():
 def health_check():
     return {"status": "OK"}
 
+
 @app.post("/categories/", response_model=Category, status_code=status.HTTP_201_CREATED)
 def create_category(category: CategoryCreate, session: Session = Depends(get_session)):
-
     existing_category = session.exec(select(Category).where(Category.name == category.name)).first()
     if existing_category:
         raise HTTPException(status_code=400, detail="Category with this name already exists")
@@ -130,9 +130,9 @@ def delete_category(category_id: int, session: Session = Depends(get_session)):
     session.commit()
     return
 
+
 @app.post("/transactions/", response_model=Transaction, status_code=status.HTTP_201_CREATED)
 def create_transaction(transaction: TransactionCreate, session: Session = Depends(get_session)):
-
     category = session.exec(select(Category).where(Category.id == transaction.category_id)).first()
     if not category:
         raise HTTPException(status_code=400, detail="Category not found")
@@ -164,7 +164,6 @@ def update_transaction(
     db_transaction = session.exec(select(Transaction).where(Transaction.id == transaction_id)).first()
     if not db_transaction:
         raise HTTPException(status_code=404, detail="Transaction not found")
-
 
     if transaction.category_id and transaction.category_id != db_transaction.category_id:
         category = session.exec(select(Category).where(Category.id == transaction.category_id)).first()
