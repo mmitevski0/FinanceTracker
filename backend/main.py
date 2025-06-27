@@ -7,7 +7,7 @@ import os
 
 DATABASE_URL = os.environ.get(
     "DATABASE_URL",
-    "postgresql://wp:wp@localhost:5432/finance_tracker_db"
+    "postgresql://wp:wp@postgres-service:5432/finance_tracker_db"
 )
 
 engine = create_engine(DATABASE_URL, echo=True)
@@ -59,6 +59,7 @@ from fastapi.middleware.cors import CORSMiddleware
 origins = [
     "http://localhost",
     "http://localhost:3000",
+    "http://finance.local",
 ]
 
 app.add_middleware(
@@ -76,6 +77,10 @@ def on_startup():
 
 
 # --- API Endpoints ---
+
+@app.get("/health")
+def health_check():
+    return {"status": "OK"}
 
 @app.post("/categories/", response_model=Category, status_code=status.HTTP_201_CREATED)
 def create_category(category: CategoryCreate, session: Session = Depends(get_session)):
