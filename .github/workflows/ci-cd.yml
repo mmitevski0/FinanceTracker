@@ -83,3 +83,5 @@ jobs:
           context: ./frontend
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/financetracker-frontend:latest
+          build-args:
+            REACT_APP_API_BASE_URL=/api
