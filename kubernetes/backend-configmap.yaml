@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: finance-tracker-ns
+data:
+  DATABASE_URL: postgresql://wp:wp@postgres-service:5432/finance_tracker_db
