@@ -5,10 +5,9 @@ from datetime import datetime
 from pydantic import constr
 import os
 
-DATABASE_URL = os.environ.get(
-    "DATABASE_URL",
-    "postgresql://wp:wp@postgres-service:5432/finance_tracker_db"
-)
+DATABASE_URL = os.environ.get("DATABASE_URL")
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL environment variable is not set. Cannot connect to database.")
 
 engine = create_engine(DATABASE_URL, echo=True)
 
