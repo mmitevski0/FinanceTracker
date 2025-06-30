@@ -15,7 +15,6 @@ env/
 /backend/__pycache__/
 /backend/.pytest_cache/
 
-# ====================================
 frontend/node_modules/
 dist/
 build/
@@ -26,25 +25,20 @@ build/
 .env.test.local
 .env.production.local
 
-# ===============================
-.idea/ # PyCharm project files
-*.iml # IntelliJ IDEA module files
+.idea/
+*.iml
 
-# ======================
 *.pem
 *.key
 *.crt
 
-# =========
 *.log
 log/
 tmp/
 
-# ==========================================================
 *.sqlite3
 *.db
 /data/
 
-# =============
 .DS_Store
 .ipynb_checkpoints # Jupyter notebooks
