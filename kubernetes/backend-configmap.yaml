@@ -4,4 +4,5 @@ metadata:
   name: backend-config
   namespace: finance-tracker-ns
 data:
-  DATABASE_URL: postgresql://wp:wp@postgres-service:5432/finance_tracker_db
+  POSTGRES_DB_NAME: "finance_tracker_db"
+  POSTGRES_DB_USER: "wp"

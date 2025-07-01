@@ -4,5 +4,5 @@ metadata:
   name: postgres-config
   namespace: finance-tracker-ns
 data:
-  POSTGRES_DB: finance_tracker_db
-  POSTGRES_USER: wp
+  POSTGRES_DB: "finance_tracker_db"
+  POSTGRES_USER: "wp"

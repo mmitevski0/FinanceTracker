@@ -5,9 +5,16 @@ from datetime import datetime
 from pydantic import constr
 import os
 
-DATABASE_URL = os.environ.get("DATABASE_URL")
-if not DATABASE_URL:
-    raise ValueError("DATABASE_URL environment variable is not set. Cannot connect to database.")
+POSTGRES_DB_USER = os.environ.get("POSTGRES_DB_USER")
+POSTGRES_DB_PASSWORD = os.environ.get("POSTGRES_DB_PASSWORD")
+POSTGRES_DB_NAME = os.environ.get("POSTGRES_DB_NAME")
+DB_HOST = os.environ.get("DB_HOST", "postgres-service")
+
+if not all([POSTGRES_DB_USER, POSTGRES_DB_PASSWORD, POSTGRES_DB_NAME, DB_HOST]):
+    raise ValueError("One or more required database environment variables are not set. "
+                     "Ensure POSTGRES_DB_USER, POSTGRES_DB_PASSWORD, POSTGRES_DB_NAME, and DB_HOST are provided.")
+
+DATABASE_URL = f"postgresql://{POSTGRES_DB_USER}:{POSTGRES_DB_PASSWORD}@{DB_HOST}:5432/{POSTGRES_DB_NAME}"
 
 engine = create_engine(DATABASE_URL, echo=True)
 
